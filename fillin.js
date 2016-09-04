@@ -12,21 +12,21 @@ fillInDate = function(start, end, delta){
     }
 
     var result = [];
-    var current = start;
+    var current = new Date(start.getTime());
 
     while(current <= end){
         result.push(new Date(current.getTime()));
 
         switch (delta) {
             case 'day':
-                    current.setDate(current.getDate() + 1);
-                break;
+                current.setDate(current.getDate() + 1);
+            break;
             case 'week':
-                    current.setDate(current.getDate() + 7);
-                break;
+                current.setDate(current.getDate() + 7);
+            break;
             case 'month':
-                    current.setMonth(current.getMonth() + 1);
-                break;
+                current.setMonth(current.getMonth() + 1);
+            break;
         }
     }
 
